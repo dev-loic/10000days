@@ -10,4 +10,6 @@ import Foundation
 
 protocol HomePresenter {
     func start()
+    func didSelectDate(_ date: Date)
+    func didConfirmDate()
 }

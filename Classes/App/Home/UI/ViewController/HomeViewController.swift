@@ -15,8 +15,7 @@ class HomeViewController: UIViewController, HomeViewContract {
     @IBOutlet private weak var explanationLabel: UILabel!
     @IBOutlet private weak var validationButton: UIButton!
     
-    private var birthdayDate: Date?
-    private lazy var dateFormater: DateFormatter = self.createDateFormatter()
+    
     
     var presenter: HomePresenter?
 
@@ -30,11 +29,13 @@ class HomeViewController: UIViewController, HomeViewContract {
     
     func display(_ viewModel: HomeViewModel) {
         navigationItem.title = viewModel.title
+        explanationLabel.text = viewModel.explanation
+        [explanationLabel, validationButton].forEach { $0?.isHidden = viewModel.explanation == nil }
     }
     
     // MARK: - Private
     
-    private func setupViews() {
+    @objc private func setupViews() {
         datePicker.datePickerMode = .date
         explanationLabel.font = UIFont.systemFont(ofSize: 18)
         explanationLabel.textAlignment = .center
@@ -42,6 +43,7 @@ class HomeViewController: UIViewController, HomeViewContract {
         explanationLabel.isHidden = true
         validationButton.setTitle("validation_button_title".localized(), for: .normal)
         validationButton.isHidden = true
+        validationButton.addTarget(self, action: #selector(didConfirmDate), for: .touchUpInside)
     }
     
     private func createDateFormatter() -> DateFormatter {
@@ -52,12 +54,10 @@ class HomeViewController: UIViewController, HomeViewContract {
     }
 
     @IBAction private func dealWithDatePickerValueChanged(_ sender: UIDatePicker) {
-        birthdayDate = sender.date
-        guard let birthdayDate = birthdayDate else { return }
-        explanationLabel.text = String(
-            format: "explanation_text_format".localized(),
-            dateFormater.string(from: birthdayDate)
-        )
-        [explanationLabel, validationButton].forEach { $0?.isHidden = false }
+        presenter?.didSelectDate(sender.date)
+    }
+    
+    @objc private func didConfirmDate() {
+        presenter?.didConfirmDate()
     }
 }

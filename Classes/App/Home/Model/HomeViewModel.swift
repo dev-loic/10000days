@@ -9,4 +9,5 @@ import Foundation
 
 struct HomeViewModel {
     let title: String
+    let explanation: String?
 }
