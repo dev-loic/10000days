@@ -1,0 +1,20 @@
+PODS:
+  - ADUtils (10.5.0):
+    - ADUtils/objc (= 10.5.0)
+  - ADUtils/objc (10.5.0):
+    - ADUtils/Swift
+  - ADUtils/Swift (10.5.0)
+
+DEPENDENCIES:
+  - ADUtils (~> 10.0)
+
+SPEC REPOS:
+  trunk:
+    - ADUtils
+
+SPEC CHECKSUMS:
+  ADUtils: 67372e355673bbc53f6843423dc78ebf3771f8ec
+
+PODFILE CHECKSUM: ec3939ab25b29f69db8684e9632439cd6cc7a9db
+
+COCOAPODS: 1.11.2
