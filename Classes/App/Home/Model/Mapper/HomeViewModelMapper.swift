@@ -18,6 +18,18 @@ class HomeViewModelMapper {
         )
     }
     
+    func resultViewModel(date: Date) -> ResultViewModel {
+        let currentDate = Date()
+        let format = date < currentDate ? "past_result_text_format".localized() : "coming_result_text_format".localized()
+        let numberOfDaysBetween = abs(Calendar.current.numberOfDaysBetween(date, and: currentDate))
+        let text = String(
+            format: format,
+            dateFormater.string(from: date),
+            "\(numberOfDaysBetween)"
+        )
+        return ResultViewModel(text: text)
+    }
+    
     // MARK: - Private
     
     private func mapExplanation(_ date: Date?) -> String? {
@@ -30,7 +42,7 @@ class HomeViewModelMapper {
     
     private func createDateFormatter() -> DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
+        formatter.dateStyle = .short
         formatter.timeStyle = .none
         return formatter
     }

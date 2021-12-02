@@ -15,8 +15,6 @@ class HomeViewController: UIViewController, HomeViewContract {
     @IBOutlet private weak var explanationLabel: UILabel!
     @IBOutlet private weak var validationButton: UIButton!
     
-    
-    
     var presenter: HomePresenter?
 
     override func viewDidLoad() {
@@ -31,6 +29,19 @@ class HomeViewController: UIViewController, HomeViewContract {
         navigationItem.title = viewModel.title
         explanationLabel.text = viewModel.explanation
         [explanationLabel, validationButton].forEach { $0?.isHidden = viewModel.explanation == nil }
+    }
+    
+    func displayResult(_ viewModel: ResultViewModel) {
+        let viewController = UIViewController()
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 24)
+        label.text = viewModel.text
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        viewController.view.addSubview(label)
+        viewController.view.backgroundColor = .white
+        label.ad_pinToSuperview(insets: UIEdgeInsets(value: 24))
+        present(viewController, animated: true, completion: nil)
     }
     
     // MARK: - Private

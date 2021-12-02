@@ -11,3 +11,7 @@ struct HomeViewModel {
     let title: String
     let explanation: String?
 }
+
+struct ResultViewModel {
+    let text: String
+}

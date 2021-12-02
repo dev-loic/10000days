@@ -10,3 +10,5 @@
 "home_title" = "Select your birthday date";
 "explanation_text_format" = "You were born on %1$@. \nIs that correct?";
 "validation_button_title" = "Validate";
+"past_result_text_format" = "Your 10000 days anniversary was on \n\n %1$@ \n\n %2$@ days too late \n\n 😭😭😭 ";
+"coming_result_text_format" = "Your 10000 days anniversary will be on \n\n %1$@ \n\n %2$@ days to go \n\n 🎉🎉🎉";

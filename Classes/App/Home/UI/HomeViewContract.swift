@@ -10,4 +10,5 @@ import Foundation
 
 protocol HomeViewContract: AnyObject {
     func display(_ viewModel: HomeViewModel)
+    func displayResult(_ viewModel: ResultViewModel)
 }

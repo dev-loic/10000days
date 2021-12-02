@@ -30,6 +30,12 @@ class HomePresenterImplementation: HomePresenter {
     }
     
     func didConfirmDate() {
-        //todo
+        let calendar = Calendar.current
+        guard
+            let birthdayDate = birthdayDate,
+            let celebrationDate = calendar.date(byAdding: .day, value: 10000, to: birthdayDate) else {
+                return
+        }
+        viewContract?.displayResult(mapper.resultViewModel(date: celebrationDate))
     }
 }
