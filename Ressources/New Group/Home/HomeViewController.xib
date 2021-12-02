@@ -26,6 +26,9 @@
                     <subviews>
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="vLV-7N-6Oh">
                             <rect key="frame" x="0.0" y="0.0" width="366" height="368"/>
+                            <connections>
+                                <action selector="dealWithDatePickerValueChanged:" destination="-1" eventType="valueChanged" id="PZy-r8-QU9"/>
+                            </connections>
                         </datePicker>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXL-yq-qoC">
                             <rect key="frame" x="0.0" y="400" width="366" height="21"/>

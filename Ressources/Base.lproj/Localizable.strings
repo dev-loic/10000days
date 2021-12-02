@@ -7,4 +7,6 @@
 */
 // HOME
 "tab_home_title" = "Home";
-"home_title" = "10000 days";
+"home_title" = "Select your birthday date";
+"explanation_text_format" = "You were born on %1$@. \nIs that correct?";
+"validation_button_title" = "Validate";

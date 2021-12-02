@@ -15,6 +15,9 @@ class HomeViewController: UIViewController, HomeViewContract {
     @IBOutlet private weak var explanationLabel: UILabel!
     @IBOutlet private weak var validationButton: UIButton!
     
+    private var birthdayDate: Date?
+    private lazy var dateFormater: DateFormatter = self.createDateFormatter()
+    
     var presenter: HomePresenter?
 
     override func viewDidLoad() {
@@ -33,9 +36,28 @@ class HomeViewController: UIViewController, HomeViewContract {
     
     private func setupViews() {
         datePicker.datePickerMode = .date
-        explanationLabel.font = UIFont.systemFont(ofSize: 24)
+        explanationLabel.font = UIFont.systemFont(ofSize: 18)
         explanationLabel.textAlignment = .center
+        explanationLabel.numberOfLines = 0
         explanationLabel.isHidden = true
+        validationButton.setTitle("validation_button_title".localized(), for: .normal)
         validationButton.isHidden = true
+    }
+    
+    private func createDateFormatter() -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        return formatter
+    }
+
+    @IBAction private func dealWithDatePickerValueChanged(_ sender: UIDatePicker) {
+        birthdayDate = sender.date
+        guard let birthdayDate = birthdayDate else { return }
+        explanationLabel.text = String(
+            format: "explanation_text_format".localized(),
+            dateFormater.string(from: birthdayDate)
+        )
+        [explanationLabel, validationButton].forEach { $0?.isHidden = false }
     }
 }
