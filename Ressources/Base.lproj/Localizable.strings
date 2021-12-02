@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  kdos
+
+  Created by Loïc Saillant on 20/10/2021.
+  
+*/
+// HOME
+"tab_home_title" = "Home";
+"home_title" = "10000 days";
