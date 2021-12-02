@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		262C86812758F95500F15BED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 262C86802758F95500F15BED /* Localizable.strings */; };
+		262C86852758FC4500F15BED /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 262C86842758FC4400F15BED /* HomeViewController.xib */; };
 		26CE4D5E2758F1DB00DC7C96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE4D5D2758F1DB00DC7C96 /* AppDelegate.swift */; };
 		26CE4D672758F1DD00DC7C96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26CE4D662758F1DD00DC7C96 /* Assets.xcassets */; };
 		26CE4D7E2758F26F00DC7C96 /* HomeViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE4D732758F26F00DC7C96 /* HomeViewContract.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		262C86802758F95500F15BED /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		262C86842758FC4400F15BED /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		26CE4D5A2758F1DB00DC7C96 /* 10000days.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 10000days.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CE4D5D2758F1DB00DC7C96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26CE4D662758F1DD00DC7C96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +64,23 @@
 				262C86802758F95500F15BED /* Localizable.strings */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		262C86822758FAB300F15BED /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				262C86832758FC3000F15BED /* Home */,
+			);
+			name = Xibs;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		262C86832758FC3000F15BED /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				262C86842758FC4400F15BED /* HomeViewController.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		26CE4D512758F1DB00DC7C96 = {
@@ -167,6 +186,7 @@
 		26CE4D852758F46F00DC7C96 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				262C86822758FAB300F15BED /* Xibs */,
 				262C867F2758F95500F15BED /* Base.lproj */,
 				26CE4D662758F1DD00DC7C96 /* Assets.xcassets */,
 				26CE4D6B2758F1DD00DC7C96 /* Info.plist */,
@@ -317,6 +337,7 @@
 			files = (
 				26CE4D672758F1DD00DC7C96 /* Assets.xcassets in Resources */,
 				262C86812758F95500F15BED /* Localizable.strings in Resources */,
+				262C86852758FC4500F15BED /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
